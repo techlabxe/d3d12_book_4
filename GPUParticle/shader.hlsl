@@ -3,9 +3,6 @@ struct VSInput
   float4 Position : POSITION;
   float3 Normal : NORMAL;
   float2 UV0 : TEXCOORD0;
-
-  float3 Tangent : TANGENT;
-  float3 Binormal :  BINORMAL;
 };
 
 struct PSInput
@@ -14,11 +11,6 @@ struct PSInput
   float3 NormalW : NORMAL;
   float2 UV0 : TEXCOORD0;
   float4 Color : COLOR;
-  float3 PositionW: TEXCOORD1;
-  float3 TangentW : TEXCOORD2;
-  float3 BinormalW: TEXCOORD3;
-
-  float3 ToEyeDirTS : TEXCOORD4;
 };
 
 cbuffer SceneParameter : register(b0)
@@ -57,27 +49,10 @@ PSInput mainVS(VSInput In)
   result.Position = mul(worldPosition, mtxVP);
 
   float3x3 mtx = (float3x3)mtxWorld;
-  
-  float3 tangentW, normalW, binormalW;
+  float3 normalW;
   normalW = mul(In.Normal, mtx);
-  tangentW = mul(In.Tangent, mtx);
-  binormalW= mul(In.Binormal, mtx);
   result.NormalW = normalW;
-  result.TangentW = tangentW;
-  result.BinormalW = binormalW;
   result.UV0 = In.UV0;
-
-  result.Color.xyz = In.Tangent * 0.5+0.5;
-  result.PositionW = worldPosition.xyz;
-
-  float3 toEyeW;
-  toEyeW = normalize(cameraPosition.xyz - worldPosition.xyz);
-  float3 binormal2 = cross(normalW, tangentW);
-  float3 toEye;
-  toEye.x = dot(toEyeW, tangentW);
-  toEye.y = dot(toEyeW, binormalW);
-  toEye.z = dot(toEyeW, normalW);
-  result.ToEyeDirTS = toEye;
 
   return result;
 }

@@ -13,11 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ヘッダー ファイル\imgui">
-      <UniqueIdentifier>{4b41feed-b93b-4369-8d4c-6af7799f8f83}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\imgui">
       <UniqueIdentifier>{b519ae15-ee0a-4dc9-bf3b-67e81a49fd08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\common">
+      <UniqueIdentifier>{12cce890-e421-4b7a-8fe8-8aadfc10a762}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\common\imgui">
+      <UniqueIdentifier>{4b41feed-b93b-4369-8d4c-6af7799f8f83}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -68,41 +71,23 @@
     <ClInclude Include="MovieTextureApp.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="..\common\d3dx12.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\DescriptorManager.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\Swapchain.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\Camera.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\D3D12AppBase.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="..\common\D3D12BookUtil.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="..\common\imgui\imgui.h">
-      <Filter>ヘッダー ファイル\imgui</Filter>
+      <Filter>ヘッダー ファイル\common\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\common\imgui\imgui_internal.h">
-      <Filter>ヘッダー ファイル\imgui</Filter>
+      <Filter>ヘッダー ファイル\common\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\common\imgui\imstb_rectpack.h">
-      <Filter>ヘッダー ファイル\imgui</Filter>
+      <Filter>ヘッダー ファイル\common\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\common\imgui\imstb_textedit.h">
-      <Filter>ヘッダー ファイル\imgui</Filter>
+      <Filter>ヘッダー ファイル\common\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\common\imgui\imstb_truetype.h">
-      <Filter>ヘッダー ファイル\imgui</Filter>
+      <Filter>ヘッダー ファイル\common\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\common\imgui\imconfig.h">
-      <Filter>ヘッダー ファイル\imgui</Filter>
+      <Filter>ヘッダー ファイル\common\imgui</Filter>
     </ClInclude>
     <ClInclude Include="MoviePlayer.h">
       <Filter>ヘッダー ファイル</Filter>
@@ -111,13 +96,31 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="..\common\imgui\backends\imgui_impl_win32.h">
-      <Filter>ヘッダー ファイル\imgui</Filter>
+      <Filter>ヘッダー ファイル\common\imgui</Filter>
     </ClInclude>
     <ClInclude Include="..\common\imgui\backends\imgui_impl_dx12.h">
-      <Filter>ヘッダー ファイル\imgui</Filter>
+      <Filter>ヘッダー ファイル\common\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Camera.h">
+      <Filter>ヘッダー ファイル\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\D3D12AppBase.h">
+      <Filter>ヘッダー ファイル\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\D3D12BookUtil.h">
+      <Filter>ヘッダー ファイル\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\d3dx12.h">
+      <Filter>ヘッダー ファイル\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\DescriptorManager.h">
+      <Filter>ヘッダー ファイル\common</Filter>
     </ClInclude>
     <ClInclude Include="..\common\Model.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>ヘッダー ファイル\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\Swapchain.h">
+      <Filter>ヘッダー ファイル\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

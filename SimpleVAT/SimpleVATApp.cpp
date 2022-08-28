@@ -375,7 +375,7 @@ void SimpleVATApp::RenderHUD()
   // ImGui ウィジェットを描画する.
   auto framerate = ImGui::GetIO().Framerate;
   ImGui::Begin("Information");
-  ImGui::Text("Framerate %.3f ms", 1000.0f / framerate);
+  ImGui::Text("Frametime %.3f ms", 1000.0f / framerate);
 
   auto eye = m_camera.GetPosition();
   ImGui::Text("EyePos (%.2f, %.2f, %.2f)", eye.m128_f32[0], eye.m128_f32[1], eye.m128_f32[2]);

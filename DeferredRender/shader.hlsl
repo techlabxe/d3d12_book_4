@@ -59,20 +59,7 @@ PSOutput  mainPS(PSInput In)
   float4 albedo = gAlbedo.Sample(gSampler, In.UV0) * float4(diffuse.xyz, 1);
   clip(albedo.w - 0.5);
 
-  float3 toCameraDir = normalize(cameraPosition.xyz - In.PositionW.xyz);
-
-  float3 normal = normalize(In.Normal);
-  float3 r = reflect(-normalize(lightDir.xyz), normal);
-  float spc = saturate(dot(r, toCameraDir));
-  spc = pow(spc, diffuse.w);
-
   float specularMask = gSpecular.Sample(gSampler, In.UV0).r;
-
-  float dotNL = saturate(dot(normalize(lightDir.xyz), normal));
-  float3 color = 0;
-  color += dotNL * albedo.xyz;
-  color += spc * specularMask;
-  color += albedo.xyz * ambient.xyz;
 
   PSOutput output = (PSOutput)0;
   output.Position = In.PositionW;

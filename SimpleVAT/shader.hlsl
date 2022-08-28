@@ -10,7 +10,6 @@ struct PSInput
   float4 Position : SV_POSITION;
   float3 NormalW : NORMAL;
   float2 UV0 : TEXCOORD0;
-  float3 PositionW: TEXCOORD1;
 };
 
 cbuffer SceneParameter : register(b0)
@@ -44,7 +43,6 @@ PSInput mainVS(VSInput In)
   
   float3 normalW;
   normalW = mul(In.Normal, mtx);
-  result.PositionW = worldPosition.xyz;
   result.NormalW = normalW;
   result.UV0 = In.UV0;
 

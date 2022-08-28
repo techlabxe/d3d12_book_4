@@ -74,8 +74,6 @@ void StreamOutputApp::Prepare()
   auto cbDesc = CD3DX12_RESOURCE_DESC::Buffer(sizeof(ShaderParameters));
   m_sceneParameterCB = CreateConstantBuffers(cbDesc);
 
-
-  //m_skinActor = PrepareModelData("assets/model/alicia/Alicia_solid.pmx");
   m_skinActor = model::LoadModelData("assets/model/alicia/Alicia_solid.pmx", this, model::ModelLoadFlag::ModelLoadFlag_Flip_UV);
   // このサンプルで使用するシェーダーパラメーター集合で定数バッファを作る.
   for (auto& batch : m_skinActor.DrawBatches) {
@@ -515,7 +513,7 @@ void StreamOutputApp::RenderHUD()
   // ImGui ウィジェットを描画する.
   auto framerate = ImGui::GetIO().Framerate;
   ImGui::Begin("Information");
-  ImGui::Text("Framerate %.3f ms", 1000.0f / framerate);
+  ImGui::Text("Frametime %.3f ms", 1000.0f / framerate);
   ImGui::Combo("Mode", (int*)&m_mode, "Mode GSOut\0Mode VSout\0\0");
   ImGui::End();
 

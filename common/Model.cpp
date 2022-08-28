@@ -178,7 +178,6 @@ namespace model {
 
       auto name = ConvertFromUTF8(node->mName.C_Str());
       auto meshCount = node->mNumMeshes;
-      char buf[256];
 
       if (meshCount > 0) {
         for (uint32_t i = 0; i < node->mNumMeshes; ++i) {
@@ -198,7 +197,7 @@ namespace model {
           vbNrm.insert(vbNrm.end(), vNrmStart, vNrmStart + mesh->mNumVertices);
 
           std::vector<XMFLOAT2> uvWork(mesh->mNumVertices);
-          for (int j = 0; j < mesh->mNumVertices; ++j) {
+          for (int j = 0; j < int(mesh->mNumVertices); ++j) {
             const auto& src = mesh->mTextureCoords[0][j];
             uvWork[j].x = src.x;
             uvWork[j].y = src.y;

@@ -22,8 +22,6 @@ cbuffer SceneParameter : register(b0)
 
   float4   lightColors[8];
   float4   pointLights[LIGHT_NUM];
-
-  float4x4 invViewProj;
 }
 
 cbuffer ShaderDrawMeshParameter : register(b1) {

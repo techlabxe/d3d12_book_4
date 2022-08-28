@@ -471,7 +471,7 @@ void WaitableSwapchainApp::RenderHUD()
   // ImGui ウィジェットを描画する.
   auto framerate = ImGui::GetIO().Framerate;
   ImGui::Begin("Information");
-  ImGui::Text("Framerate %.3f ms", 1000.0f / framerate);
+  ImGui::Text("Frametime %.3f ms", 1000.0f / framerate);
   float* lightDir = reinterpret_cast<float*>(&m_sceneParameters.lightDir);
   ImGui::InputFloat3("Light", lightDir, "%.2f");
   ImGui::End();
